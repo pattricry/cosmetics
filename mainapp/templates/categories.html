@@ -1,0 +1,34 @@
+ {% extends 'base.html' %}
+ {% load static %}
+
+ {% block title %}all categories{% endblock title %}
+ {% block header %}{% include "header.html" %}{% endblock header %}
+ {% block hero %}{% include "hero.html" %}{% endblock hero %}
+{% block content %}
+<div class="content">
+  <!-- content4  -->
+  <div class="categories">
+    <div class="container">
+      <h3 class="title">All categories</h3>
+      <div class="row justify-content-center gy-4">
+       {% if categories %}
+         {% for item in categories  %}
+         <div class="col-9 col-sm-4 col-md-5 col-lg-3">
+          <div class="card">
+            <a href="{% url 'category' item.id item.slug %}"><img src="{{item.img.url}}"  class="card-img-top"></a>
+            <div class="card-body">
+              <a href="{% url 'category' item.id item.slug %}"><h5 class="card-title">{{item.name|title}}</h5></a>
+            </div>
+          </div>
+        </div>
+         {% endfor %}
+         
+       {% endif %}
+      </div>
+    </div>
+  </div>
+  <!-- content4 done  -->
+</div>
+  {% include "brands.html" %}
+{% endblock content %}
+{% block footer %}{% include "footer.html" %}{% endblock footer %}

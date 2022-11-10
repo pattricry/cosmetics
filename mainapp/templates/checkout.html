@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Shopcart {% endblock title %}
+{% block header %}{% include "header.html" %}{% endblock header %}
+{% block content %}
+<!-- content section begins -->
+<div class="content">
+<!-- content4  -->
+<!-- checkout -->
+<div class="centent my-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-10 col-sm-10 col-md-8">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  checkout
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <div class="table-box table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">product</th>
+                            <th scope="col">name</th>
+                            <th scope="col">price</th>
+                            <th scope="col">quality</th>
+                            <th scope="col">$ amount</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% if cartitems %}
+                          {% for tob in cartitems %}
+                          <tr>
+                            <td><img src="{{tob.product.p_img.url}}" style="width: 60px;"></td>
+                            <td>{{tob.product.p_name}}</td>
+                            <td>{{tob.price}}</td>
+                            <td>{{tob.quantity}}</td>
+                            <td>{{tob.amount}}</td>
+                          </tr>
+                        {%  endfor %}
+                        {%  endif %}  
+                        </tbody>
+                        <tbody class="total">
+                          <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>total:{{total}} </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+           <!--  -->
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            delivery address
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="address">
+                              <form action="{% url 'pay' %}" method="POST">  
+                              {% csrf_token %}
+                                <div class="mb-3">
+                                  <label for="exampleInputText1" class="form-label">Frist address</label>
+                                  <input type="text" name="first_name" value="{{profile.first_name}}" id="exampleInput Test1" aria-describedby="Text Help">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label">lest name</label>
+                                  <input type="text" name="last_name" value="{{profile.last_name}}" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label">billing_address</label>
+                                  <input type="text" name="billing_address" value="{{profile.last_name}}" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label">order address</label>
+                                  <input type="text"name="order_address" value="{{profile.address}}" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label"> delivery address</label>
+                                  <input type="text"name="delivery_address" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label"> delivery city</label>
+                                  <input type="text"name="city" value="{{profile.city}}" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label"> delivery state</label>
+                                  <input type="text" name="state"value="{{profile.state}}" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleInput Text1" class="form-label"> email <address></address></label>
+                                  <input type="text" name="email"value="{{profile.email}}" id="exampleInput Text1" aria-describedby="textlHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="exampleIn Text1" class="form-label">phone number</label>
+                                  <input type="text"name="phone" value="{{profile.phone}}" id="exampleInpuText1">
+                                </div>
+                                <input type="hidden" name="cartno" value="{{profile.id}}">
+                                <input type="hidden" name="total" value="{{total}}">
+                                <button type="submit" class="btn">place order</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- content4 done -->
+{% include "brands.html" %}
+{% endblock content %}
+{% block footer %}{% include "footer.html" %}{% endblock footer %}

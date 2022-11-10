@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}product page{% endblock title %}
+
+{% block header %}{% include "header.html" %}{% endblock header %}
+
+{% block hero %}{% include "hero.html" %}{% endblock hero %}
+
+{% block content %}
+<div class="daitalis">
+    <div class="container">
+      <h3 class="title">product details</h3>
+      <div class="row justify-content-center gy-5">
+        <div class="col-1 col-sm-2 col-md-2 col-lg-3 order-lg-0 d-none d-lg-block">
+          <div class="block">
+            <img src="/img/model10.jpg" alt="">
+            <div class="block-body">
+             <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-8 col-sm-8 col-md-7 col-lg-5 order-1 order-lg-block">
+          <div class="card">
+            <a href="#"><img src="{{datails.p_img.url}}" class="card-img-top"></a>
+            <div class="card-body">
+              <h5 class="card-title">category: {{datails.category.name|title}}</h5>
+              <p class="card-text">product:{{datails.p_name|title}}</p>
+              <p class="card-text">price: $10{{datails.p_price}}</p>
+              <p class="card-text">Description: {{datails.p_des}}</p>
+              <form action="{% url 'itemtocart' %}" method='POST'>
+              {% csrf_token %} 
+                <input type="hidden" name="productid" value="{{datails.id}}">
+                <label>Qty: <input name='quantity' type="number" value="1" min="{{datails.p_min}}" max="{{datails.p_max}}" class="p-1 px-2"></label>
+                <button type="submit" class="btn mb-2">add to cart</button> 
+              </form>
+            </div>
+          </div>
+        </div>  
+        <!--  -->
+        <div class="col-1 col-sm-8 col-md-2 col-lg-3 order-1 order-lg-2">
+          <div class="block">
+            <img src="/img/model14.jpg" alt="">
+            <div class="block-body">
+             <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% include "brands.html" %}
+{% endblock content %}
+
+{% block footer %}{% include "footer.html" %}{% endblock footer %}

@@ -1,0 +1,176 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home page{% endblock title %}
+
+{% block header %}{% include "header.html" %}{% endblock header %}
+
+{% block hero %}{% include "hero.html" %}{% endblock hero %}
+
+{% block content %}
+<div class="content">
+    <div class="content1">
+        <div class="container">
+          <h3 class="title">Card title</h3>
+          <div class="row justify-content-center">
+            <div class="col-9">
+              <div class="card">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content1 done -->
+    
+      <!-- content2  -->
+      <div class="content2 mt-5">
+        <div class="container">
+          <h3 class="title mb-4">avenger cosmetics</h3>
+          <div class="row justify-content-center gy-4">
+           {% for item in category %}
+           <div class="col-9 col-sm-5">
+            <div class="card">
+              <video src="{{item.video.url}}" autoplay controls></video>
+              <div class="card-body">
+                <h5 class="card-title">{{item.name|title}}</h5>
+                <a href="#" class="btn">more...</a>
+              </div>
+            </div>
+          </div>
+           {% endfor %}
+            <!-- box end  -->
+           </div>
+          </div>
+        </div>
+      </div>
+      <!-- content2 done  -->
+      
+    
+      <!-- content3  -->
+      <div class="content3 mt-5">
+        <div class="container-fluid">
+          <h3 class="title">about us</h3>
+          <div class="row justify-content-center">
+            <div class="col-10 col-sm-5">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-10 col-sm-5">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+      <!-- content3 done  -->
+    
+      <!-- content4  -->
+      <div class="content4 mt-5">
+        <div class="container">
+          <h3 class="title">gallery</h3>
+          <div class="row justify-content-center gy-4">
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model7.jpg"  class="card-img-top">
+              </div>
+    
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model10.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model11.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model2.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model3.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model8.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model5.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/model9.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/showcase1.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/showcase3.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+            <div class="col-5 col-sm-4 col-md-3 col-lg-2">
+              <div class="card">
+                <img src="{% static '' %}img/showcase.jpg"  class="card-img-top">
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+      <!-- content4 done  -->
+      <!-- content5  -->
+      
+</div>
+{% include "brands.html" %}
+
+{% endblock content %}
+
+{% block footer %}{% include 'footer.html' %}{% endblock footer %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}product page{% endblock title %}
+
+{% block header %}{% include "header.html" %}{% endblock header %}
+
+
+{% block content %}
+<div class="content">
+    <!-- content4  -->
+    <div class="profile">
+      <div class="container">
+        <h3 class="title">profile details</h3>
+        <div class="row justify-content-center gy-5">
+          <div class="col-1 col-sm-2 col-md-2 col-lg-3 order-lg-0 d-none d-lg-block">
+            <div class="block">
+              <img src="{{profile.profile_img.url}}" alt="">
+              <div class="block-body">
+               <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-8 col-sm-8 col-md-7 col-lg-5 order-1 order-lg-block">
+            <div class="card">
+               <!-- <a href="#"><img src="/img/model1.jpg" class="card-img-top"></a>   -->
+              <div class="card-body">
+                <div class="profile">
+                    <form>
+                      <div class="mb-3">
+                        <label for="exampleInputText1" class="form-label">Frist address</label>
+                        <input type="text" value="{{profile.first_name|title}}" class="form-control" id="exampleInput Test1" aria-describedby="Text Help">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInput Text1" class="form-label">lest address</label>
+                        <input type="text" value="{{profile.last_name|title }}" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInput Text1" class="form-label"></label>order address</label>
+                        <input type="text"value="{{profile.address }}" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInput Text1" class="form-label"> delivery address</label>
+                        <input type="text"value="" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInput Text1" class="form-label"> delivery city</label>
+                        <input type="text"value="{{profile.city }}" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInput Text1" class="form-label"> delivery state</label>
+                        <input type="text"value="{{profile.state }}" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInput Text1" class="form-label"> email <address></address></label>
+                        <input type="text"value="{{profile.email }}" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleIn Text1" class="form-label">phone number</label>
+                        <input type="text"value="{{profile.phone}}" class="form-control" id="exampleInpuText1">
+                      </div>
+                      <button type="submit" class="btn">up date</button>
+                    </form>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <div class="col-1 col-sm-8 col-md-2 col-lg-3 order-1 order-lg-2">
+            <div class="row justify-content-center">
+              <div class="col-12 col-lg-10 col-md-4" >
+                <div class="card1">
+                    <div class="card-body">
+                      <p class="card-body"><a href="{% url 'index' %}">home</a></p> 
+                      <p class="card-body"><a href="">cart</a></p>
+                      <p class="card-body"><a href=" {% url 'profile' %}">profile</a></p>
+                      <p class="card-body"><a href=" {% url 'profile_update' %}">profile updata</a></p>
+                      <p class="card-body"><a href="{% url 'profile_password' %}">password updata</a></p>
+                    </div>   
+                </div>
+              </div>
+            </div>
+            <!--  -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% include "brands.html" %}
+
+
+{% endblock content %}
+    
+
+{% block footer %}{% include "footer.html" %}{% endblock footer %}

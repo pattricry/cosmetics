@@ -3,7 +3,10 @@
 *.pyc
 __pycache__/
 local_settings.py
-# db.sqlite3
-# db.sqlite3-journal
-# media
+db.sqlite3
+db.sqlite3-journal
+media
 venv
+
+
+# ssh -i "dozie.pem" ubuntu@ec2-54-193-53-64.us-west-1.compute.amazonaws.com

@@ -155,6 +155,8 @@ def profile_password(request):
     }        
     return render(request, 'profile_password.html',context)        
 # profile done
+
+
 # shopcart
 @login_required(login_url='signin')
 def itemtocart(request):
@@ -333,15 +335,15 @@ def pay(request):
             delivery.state =state
             delivery.save()
 
-            email = EmailMessage(
-                'Transaction completed',#title
-                f'Dear{user.first_name}, your transaction is completed. \n your order will be delivered in 24hours.\n thank you for your patronage', #message body goes here
-                settings.EMAIL_HOST_USER, #sender email
-                [email] #reciever's email 
-            )
+            #email = EmailMessage(
+                #'Transaction completed',#title
+                #f'Dear{user.first_name}, your transaction is completed. \n your order will be delivered in 24hours.\n thank you for your patronage', #message body goes here
+                #settings.EMAIL_HOST_USER, #sender email
+                #[email] #reciever's email 
+            #)
             
-            email.fail_silently = True
-            email.send()
+            #email.fail_silently = True
+            #email.send()
             
             account = Payment()
             account.user = user

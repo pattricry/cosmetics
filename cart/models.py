@@ -54,7 +54,7 @@ class Payment(models.Model):
         verbose_name_plural = 'payments'
 
 class Shipping(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(max_length=50)

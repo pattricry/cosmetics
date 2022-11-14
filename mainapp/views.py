@@ -291,7 +291,7 @@ def pay(request):
     if request.method == 'POST':
         api_key = 'sk_test_f7969b5345a20b2abd73275f301ac2c7b81efc3b'
         curl = 'https://api.paystack.co/transaction/initialize'
-        cburl = 'http://54.246.187.160/callback'
+        cburl = 'http://34.244.143.249/callback'
         # cburl = 'http://localhost:8000/callback'
         ref = str(uuid.uuid4())
         amount = float(request.POST['total']) * 100
@@ -335,6 +335,15 @@ def pay(request):
             delivery.state =state
             delivery.save()
 
+            
+            account = Payment()
+            account.user = user
+            account.total = amount
+            account.cart_no = cartno
+            account.pay_code = ref
+            account.paid = True
+            account.save()
+
             #email = EmailMessage(
                 #'Transaction completed',#title
                 #f'Dear{user.first_name}, your transaction is completed. \n your order will be delivered in 24hours.\n thank you for your patronage', #message body goes here
@@ -345,13 +354,6 @@ def pay(request):
             #email.fail_silently = True
             #email.send()
             
-            account = Payment()
-            account.user = user
-            account.total = amount
-            account.cart_no = cartno
-            account.pay_code = ref
-            account.paid = True
-            account.save()
             return redirect(rurl)     
     return redirect('checkout')
 

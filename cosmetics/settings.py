@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import email
+
 import os
 from pathlib import Path
 
@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-f$l0!q2&mr0%qo+17q!v*&sz8@pyj+h7f#%1nxp!p!b&w$($58'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['34.244.143.249', '*']
+ALLOWED_HOSTS = ['34.244.143.249']
 
 
 # Application definition

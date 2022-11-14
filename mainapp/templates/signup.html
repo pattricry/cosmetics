@@ -4,129 +4,131 @@
 {% block title %}product page{% endblock title %}
 
 {% block header %}{% include "header.html" %}{% endblock header %}
- <div class="content">
-    <!-- content4  -->
-    <div class="profile">
-      <div class="container">
-        <h3 class="title">signinup</h3>
-        <div class="row justify-content-center gy-5">
-          <div class="col-1 col-sm-2 col-md-2 col-lg-3 order-lg-0 d-none d-lg-block">
-            <div class="block">
-              <img src="{% static '' %}img/model10.jpg" alt="">
-              <div class="block-body">
-              </div>
+{% block content %}
+<div class="content">
+  <!-- content4  -->
+  <div class="profile">
+    <div class="container">
+      <h3 class="title">signinup</h3>
+      <div class="row justify-content-center gy-5">
+        <div class="col-1 col-sm-2 col-md-2 col-lg-3 order-lg-0 d-none d-lg-block">
+          <div class="block">
+            <img src="{% static '' %}img/model10.jpg" alt="">
+            <div class="block-body">
             </div>
           </div>
-          <div class="col-8 col-sm-8 col-md-7 col-lg-5 order-1 order-lg-block">
-            <div class="card">
-              <!-- <a href="#"><img src="/img/model1.jpg" class="card-img-top"></a> -->
-              <div class="card-body">
-                <div class="address">
-                    <form method="POST" action="{% url 'signup'}">
-                        {% csrf_token %}
-                      <div class="mb-3">
-                        <label for="exampleInputText1" class="form-label">username</label>
-                        <input name="username" type="text" class="form-control" id="exampleInput Test1" aria-describedby="Text Help">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInput Text1" class="form-label">first name</label>
-                        <input name="frist_name" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInput Text1" class="form-label"></label>lest name</label>
-                        <input name="last_name" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInput Text1" class="form-label"></label>email</label>
-                        <input name="email " type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInput Text1" class="form-label"></label>phome</label>
-                        <input name="phone" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInput Text1" class="form-label"></label>password</label>
-                        <input name=" password1" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
-                      </div>
-                      <div class="mb-3">
-                        <label for="exampleInput Text1" class="form-label"></label>password</label>
-                        <input name="password2" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
-                      </div>
-                      <button type="submit" class="btn mb-3">signinup</button>
-                      <div class="mb-3 password">
-                        <div  id="emailHelp" class="form-text">password should be at lest 8 number.</div>
-                        <div id="emailHelp" class="form-text">password can be letters, number and symbols</div>
-                      <!-- <button type="submit" class="btn">pay</button> -->
+        </div>
+        <div class="col-8 col-sm-8 col-md-7 col-lg-5 order-1 order-lg-block">
+          <div class="card">
+            <!-- <a href="#"><img src="/img/model1.jpg" class="card-img-top"></a> -->
+            <div class="card-body">
+              <div class="address">
+                  <form method="POST" action="{% url 'signup'}">
+                      {% csrf_token %}
+                    <div class="mb-3">
+                      <label for="exampleInputText1" class="form-label">username</label>
+                      <input name="username" type="text" class="form-control" id="exampleInput Test1" aria-describedby="Text Help">
                     </div>
-                    </form>
+                    <div class="mb-3">
+                      <label for="exampleInput Text1" class="form-label">first name</label>
+                      <input name="frist_name" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInput Text1" class="form-label"></label>lest name</label>
+                      <input name="last_name" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInput Text1" class="form-label"></label>email</label>
+                      <input name="email " type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInput Text1" class="form-label"></label>phome</label>
+                      <input name="phone" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInput Text1" class="form-label"></label>password</label>
+                      <input name=" password1" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInput Text1" class="form-label"></label>password</label>
+                      <input name="password2" type="password" class="form-control" id="exampleInput Text1" aria-describedby="textlHelp">
+                    </div>
+                    <button type="submit" class="btn mb-3">signinup</button>
+                    <div class="mb-3 password">
+                      <div  id="emailHelp" class="form-text">password should be at lest 8 number.</div>
+                      <div id="emailHelp" class="form-text">password can be letters, number and symbols</div>
+                    <!-- <button type="submit" class="btn">pay</button> -->
+                  </div>
+                  </form>
+                </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-1 col-sm-8 col-md-2 col-lg-3 order-1 order-lg-2">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-md-4" >
+              <div class="card1">
+                <img src="{% static '' %}img/model1.jpg" alt="">
+                  <div class="card-body">
                   </div>
               </div>
             </div>
           </div>
           <!--  -->
-          <div class="col-1 col-sm-8 col-md-2 col-lg-3 order-1 order-lg-2">
-            <div class="row justify-content-center">
-              <div class="col-12 col-lg-10 col-md-4" >
-                <div class="card1">
-                  <img src="{% static '' %}img/model1.jpg" alt="">
-                    <div class="card-body">
-                    </div>
-                </div>
-              </div>
-            </div>
-            <!--  -->
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- content4  done -->
-    <!-- content5 -->
-    <div class="content5">
-      <div class="container">
-        <h3 class="title">official brands</h3>
-        <div class="row justify-content-center gy-3">
-          <div class="col-5 col-sm-4 col-md-3 col-lg-2 card_box">
-            <div class="card">
-              <img src="{% static '' %}img/brand1.jpg" class="card-img-top">
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
-            <div class="card">
-              <img src="{% static '' %}img/brand2.jpg" class="card-img-top">
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
-            <div class="card">
-              <img src="{% static '' %}img/brand3.jpg" class="card-img-top">
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
-            <div class="card">
-              <img src="{% static '' %}img/brand4.jpg" class="card-img-top">
-            </div>
-          </div>
-          <!--  -->
-          <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
-            <div class="card">
-              <img src="{% static '' %}img/brand5.jpg" class="card-img-top">
-            </div>  
-          </div>
-          <!--  -->
-          <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
-            <div class="card">
-              <img src="{% static '' %}img/brand6.jpg" class="card-img-top">
-            </div>
-          </div>
-          <!--  -->
-        </div>
-      </div>
-    </div>
-     <!-- content5 done -->
   </div>
+  <!-- content4  done -->
+  <!-- content5 -->
+  <div class="content5">
+    <div class="container">
+      <h3 class="title">official brands</h3>
+      <div class="row justify-content-center gy-3">
+        <div class="col-5 col-sm-4 col-md-3 col-lg-2 card_box">
+          <div class="card">
+            <img src="{% static '' %}img/brand1.jpg" class="card-img-top">
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
+          <div class="card">
+            <img src="{% static '' %}img/brand2.jpg" class="card-img-top">
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
+          <div class="card">
+            <img src="{% static '' %}img/brand3.jpg" class="card-img-top">
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
+          <div class="card">
+            <img src="{% static '' %}img/brand4.jpg" class="card-img-top">
+          </div>
+        </div>
+        <!--  -->
+        <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
+          <div class="card">
+            <img src="{% static '' %}img/brand5.jpg" class="card-img-top">
+          </div>  
+        </div>
+        <!--  -->
+        <div class="col-5 col-sm-4 col-md-4 col-lg-2 card_box">
+          <div class="card">
+            <img src="{% static '' %}img/brand6.jpg" class="card-img-top">
+          </div>
+        </div>
+        <!--  -->
+      </div>
+    </div>
+  </div>
+   <!-- content5 done -->
+</div>
+{% endblock content %}
   <!-- content section ends -->
   {% block footer %}{% include "footer.html" %}{% endblock footer %}
